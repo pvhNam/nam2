@@ -23,6 +23,7 @@ header {
 }
 
 .logo {
+  
   font-size: 1.5em; /* Kích thước font 1.5 lần font gốc */
   font-weight: bold;
   color: #0056b3; /* Màu xanh dương chuyên nghiệp */
@@ -30,6 +31,7 @@ header {
 
 /* Bỏ các style cũ của .menu */
 .menu ul {
+  
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -64,6 +66,7 @@ header {
 
 /* --- Nội dung chính --- */
 .container {
+  
   /* Căn giữa container ra giữa màn hình */
   max-width: 960px; /* Chiều rộng tối đa */
   margin: 24px auto; /* Tự động căn giữa (trên/dưới 24px, trái/phải auto) */
@@ -414,14 +417,15 @@ footer p {
 
   /* Cho Header */
   header {
-    flex-direction: column; /* Xếp logo và menu chồng lên nhau */
+    
+    flex-direction: row; /* Xếp logo và menu chồng lên nhau */
     padding: 16px;
     gap: 16px;
   }
   
   /* --- FIX MENU BỊ VỠ --- */
   .menu ul {
-    flex-direction: column; /* Xếp các mục menu dọc xuống */
+    flex-direction: row; /* Xếp các mục menu dọc xuống */
     width: 100%;
     gap: 8px; /* Khoảng cách giữa các mục menu */
   }
@@ -446,4 +450,118 @@ footer p {
     margin: 16px;
   }
   /* --- HẾT FIX NỘI DUNG --- */
+}
+/* --- CSS MỚI CHO FOOTER NÂNG CẤP --- */
+
+/* Ghi đè style footer cũ */
+footer {
+  background-color: #343a40; /* Giữ màu nền tối */
+  color: #adb5bd; /* Màu chữ xám nhạt */
+  padding: 48px 0 0 0; /* Tăng padding trên, bỏ padding dưới */
+  margin-top: 32px;
+  text-align: left; /* Bỏ text-align: center cũ */
+}
+
+/* Reset margin của thẻ p trong footer */
+footer p {
+  margin: 0 0 16px 0;
+  line-height: 1.6;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto; /* Căn giữa */
+  padding: 0 24px;
+  display: flex;
+  flex-wrap: wrap; /* Cho phép xuống hàng trên mobile */
+  justify-content: space-between; /* Phân bố 3 cột */
+  gap: 32px; /* Khoảng cách giữa các cột */
+}
+
+.footer-col {
+  flex: 1; /* Các cột tự co giãn */
+  min-width: 250px; /* Chiều rộng tối thiểu trước khi xuống hàng */
+}
+
+.footer-col h3 {
+  font-size: 1.25em;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 20px;
+  /* Giống style của CV cho đồng bộ */
+  border-bottom: 2px solid #007bff; 
+  padding-bottom: 8px;
+  display: inline-block; /* Giúp border-bottom vừa vặn với chữ */
+}
+
+/* Style cho các link và list trong footer */
+.footer-col ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Cột Contact & Quick Links */
+.contact-info li,
+.quick-links li {
+  margin-bottom: 12px;
+}
+
+.contact-info a,
+.quick-links a {
+  color: #adb5bd; /* Màu link xám nhạt */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover,
+.quick-links a:hover {
+  color: #ffffff; /* Sáng lên khi hover */
+  text-decoration: underline;
+}
+
+.contact-info i {
+  width: 20px; /* Căn icon cho thẳng hàng */
+  margin-right: 8px;
+  color: #007bff; /* Màu xanh cho icon */
+  text-align: center;
+}
+
+/* Cột Social Media */
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px; /* Kích thước nút */
+  height: 44px;
+  background-color: #495057; /* Nền nút */
+  color: #ffffff; /* Màu icon */
+  text-decoration: none;
+  border-radius: 50%; /* Bo tròn */
+  font-size: 1.2em;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+  background-color: #007bff; /* Đổi màu xanh khi hover */
+  transform: translateY(-3px); /* Nhấc nút lên */
+}
+
+/* Dòng Copyright */
+.footer-bottom {
+  background-color: #212529; /* Đậm hơn 1 chút */
+  color: #adb5bd;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px; /* Khoảng cách với nội dung footer */
+  border-top: 1px solid #495057; /* Đường phân cách */
+}
+
+.footer-bottom p {
+  margin: 0; /* Reset margin cho dòng copyright */
 }

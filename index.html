@@ -10,13 +10,20 @@
       href="./img/favicon-16x16.png"
     />
     <link rel="manifest" href="./img/manifest.json" />
-    
+
     <title>Trang chủ - HoaiNam's Site</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <div class="logo">HoaiNam's Site</div>
+      <div class="logo">Nam's Site</div>
       <nav class="menu">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
@@ -29,7 +36,9 @@
     <section class="hero">
       <div class="hero-content">
         <h1>Chào mừng đến với Portfolio của HoaiNam</h1>
-        <p>Sinh viên - Lập trình viên. Khám phá các dự án và kỹ năng của tôi.</p>
+        <p>
+          Sinh viên - Lập trình viên. Khám phá các dự án và kỹ năng của tôi.
+        </p>
         <a href="about.html" class="cta-button">Tìm hiểu về tôi</a>
       </div>
     </section>
@@ -37,41 +46,103 @@
     <div class="container">
       <h2>Dự án nổi bật</h2>
       <p>Đây là một số dự án tôi đã thực hiện trong quá trình học tập.</p>
-      
+
       <div class="card-grid">
-        
         <div class="card">
-          <img src="https://via.placeholder.com/400x250.png?text=Project+1" alt="Dự án 1" />
+          <img
+            src="https://via.placeholder.com/400x250.png?text=Project+1"
+            alt="Dự án 1"
+          />
           <div class="card-content">
             <h3>Dự án Web Thời trang</h3>
-            <p>Xây dựng website e-commerce cơ bản sử dụng Java (Back-end) và HTML/CSS/JS (Front-end).</p>
-            <a href="#" class="card-link">Xem chi tiết &rarr;</a>
-          </div>
-        </div>
-        
-        <div class="card">
-          <img src="https://via.placeholder.com/400x250.png?text=Project+2" alt="Dự án 2" />
-          <div class="card-content">
-            <h3>Game Battleship AI</h3>
-            <p>Dự án cho môn Nhập môn Trí tuệ Nhân tạo, phát triển AI có thể chơi Battleship với người.</p>
-            <a href="#" class="card-link">Xem chi tiết &rarr;</a>
-          </div>
-        </div>
-        
-        <div class="card">
-          <img src="https://via.placeholder.com/400x250.png?text=Project+3" alt="Dự án 3" />
-          <div class="card-content">
-            <h3>Web Quản lý Chứng khoán</h3>
-            <p>Dự án cá nhân mô phỏng giao diện và các chức năng cơ bản của một trang web chứng khoán.</p>
+            <p>
+              Xây dựng website e-commerce cơ bản sử dụng Java (Back-end) và
+              HTML/CSS/JS (Front-end).
+            </p>
             <a href="#" class="card-link">Xem chi tiết &rarr;</a>
           </div>
         </div>
 
+        <div class="card">
+          <img
+            src="https://via.placeholder.com/400x250.png?text=Project+2"
+            alt="Dự án 2"
+          />
+          <div class="card-content">
+            <h3>Game Battleship AI</h3>
+            <p>
+              Dự án cho môn Nhập môn Trí tuệ Nhân tạo, phát triển AI có thể chơi
+              Battleship với người.
+            </p>
+            <a href="#" class="card-link">Xem chi tiết &rarr;</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://via.placeholder.com/400x250.png?text=Project+3"
+            alt="Dự án 3"
+          />
+          <div class="card-content">
+            <h3>Web Quản lý Chứng khoán</h3>
+            <p>
+              Dự án cá nhân mô phỏng giao diện và các chức năng cơ bản của một
+              trang web chứng khoán.
+            </p>
+            <a href="#" class="card-link">Xem chi tiết &rarr;</a>
+          </div>
+        </div>
       </div>
     </div>
 
     <footer>
-      <p>&#169; This is design by HoaiNam</p>
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>Liên hệ</h3>
+          <ul class="contact-info">
+            <li>
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:hoainam.dev@email.com">hoainam.dev@email.com</a>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <a href="tel:0123456789">0123 456 789</a>
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i> Dĩ An, Bình Dương, Vietnam
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="quick-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About (CV)</a></li>
+            <li><a href="skill.html">Skills</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Kết nối với tôi</h3>
+          <p>Theo dõi tôi trên các nền tảng mạng xã hội:</p>
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn" target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#" aria-label="GitHub" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="#" aria-label="Facebook" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&#169; 2024 This is design by HoaiNam. All Rights Reserved.</p>
+      </div>
     </footer>
   </body>
 </html>
