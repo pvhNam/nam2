@@ -1,63 +1,64 @@
-/* --- Cài đặt chung --- */
+/* --- Cài đặt chung (ĐÃ NÂNG CẤP FONT) --- */
 body {
   margin: 0;
-  /* Dùng một font sans-serif hiện đại, dễ đọc thay vì Times New Roman */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
-  background-color: #f4f4f7; /* Màu nền xám rất nhạt cho toàn trang */
-  color: #333; /* Màu chữ chính đậm, dễ đọc */
-  line-height: 1.6; /* Tăng dãn dòng */
+  /* Dùng Google Font Montserrat "xịn" hơn */
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f4f4f7;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* --- Header & Thanh điều hướng (Menu) --- */
+/* --- Header (ĐÃ NÂNG CẤP STICKY) --- */
 header {
-  /* SỬ DỤNG FLEXBOX ĐỂ CĂN CHỈNH */
   display: flex;
-  justify-content: space-between; /* Đẩy logo và menu ra 2 đầu */
-  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 16px 32px;
+  border-bottom: 1px solid #ddd;
 
-  background-color: #ffffff; /* Header màu trắng sạch sẽ */
-  padding: 16px 32px; /* Thêm padding cân đối */
-  border-bottom: 1px solid #ddd; /* Đường viền mỏng phân cách */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Đổ bóng nhẹ rất "xịn" */
+  /* NÂNG CẤP: Làm "dính" header */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Đảm bảo header đè lên mọi thứ */
+  transition: box-shadow 0.3s ease; /* Hiệu ứng mượt */
+}
+
+/* MỚI: Thêm shadow khi cuộn */
+header.scrolled {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .logo {
-  
-  font-size: 1.5em; /* Kích thước font 1.5 lần font gốc */
+  font-size: 1.5em;
   font-weight: bold;
-  color: #0056b3; /* Màu xanh dương chuyên nghiệp */
+  color: #0056b3;
 }
 
-/* Bỏ các style cũ của .menu */
 .menu ul {
-  
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: flex; /* Dùng Flexbox cho các mục menu */
-  gap: 12px; /* Khoảng cách tự động giữa các mục */
+  display: flex;
+  gap: 12px;
 }
-
-/* Không cần style .menu li nữa */
 
 .menu li a {
   display: block;
-  color: #555; /* Màu chữ xám đậm */
+  color: #555;
   text-align: center;
-  padding: 10px 16px; /* Padding cho các nút menu */
+  padding: 10px 16px;
   text-decoration: none;
-  border-radius: 5px; /* Bo góc nhẹ */
-  transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển động mượt */
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* SỬA LỖI: Cú pháp hover đúng */
 .menu li a:hover {
-  background-color: #0056b3; /* Đổi nền khi hover */
-  color: #ffffff; /* Đổi chữ thành trắng */
+  background-color: #0056b3;
+  color: #ffffff;
 }
 
-/* Thêm style cho mục .active (trang hiện tại) */
 .menu li a.active {
   background-color: #007bff;
   color: #ffffff;
@@ -66,75 +67,53 @@ header {
 
 /* --- Nội dung chính --- */
 .container {
-  
-  /* Căn giữa container ra giữa màn hình */
-  max-width: 960px; /* Chiều rộng tối đa */
-  margin: 24px auto; /* Tự động căn giữa (trên/dưới 24px, trái/phải auto) */
-
-  padding: 24px 32px; /* Padding bên trong nhiều hơn */
-  background-color: #ffffff; /* Nền trắng cho nội dung */
-  border-radius: 8px; /* Bo góc nhiều hơn */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Đổ bóng rõ hơn */
+  max-width: 960px;
+  margin: 24px auto;
+  padding: 24px 32px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .container h2 {
-  margin-top: 0; /* Xóa khoảng cách thừa của tiêu đề */
+  margin-top: 0;
   color: #0056b3;
 }
 
-/* --- Footer (Chân trang) --- */
-/* Style trực tiếp thẻ <footer> thay vì class .cuoi */
-footer {
-  margin-top: 32px; /* Khoảng cách với nội dung */
-  padding: 24px;
-  text-align: center;
-  background-color: #343a40; /* Footer màu tối */
-  color: #adb5bd; /* Chữ màu xám nhạt */
-  font-size: 0.9em;
-}
-
-footer p {
-  margin: 0; /* Xóa margin mặc định của thẻ <p> */
-}
-/* --- Thêm vào style.css cho trang Skill --- */
+/* --- Trang Skill --- */
 .skill-item {
-  margin-bottom: 24px; /* Khoảng cách giữa các thanh skill */
+  margin-bottom: 24px;
 }
 
 .skill-name {
-  font-size: 1.1em; /* Cỡ chữ tên kỹ năng */
+  font-size: 1.1em;
   font-weight: 600;
   margin-bottom: 8px;
   color: #333;
 }
 
 .skill-bar {
-  background-color: #e9ecef; /* Màu nền của thanh (màu xám nhạt) */
-  border-radius: 25px; /* Bo tròn thanh */
-  height: 28px; /* Chiều cao thanh */
-  overflow: hidden; /* Đảm bảo thanh % bên trong không tràn ra */
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Đổ bóng bên trong */
+  background-color: #e9ecef;
+  border-radius: 25px;
+  height: 28px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .skill-level {
-  background-color: #007bff; /* Màu xanh dương chủ đạo */
+  background-color: #007bff;
   color: white;
   height: 100%;
-  text-align: center; /* Căn giữa chữ (90%, 70%...) */
+  text-align: center;
   font-weight: bold;
-  line-height: 28px; /* Căn giữa text theo chiều dọc */
-  border-radius: 25px; /* Bo tròn thanh % */
-  /* Hiệu ứng animation mượt mà khi tải trang */
+  line-height: 28px;
+  border-radius: 25px;
   transition: width 0.8s ease-in-out;
 }
-/* --- CSS MỚI CHO TRANG HOME (HERO & CARDS) --- */
+
+/* --- Trang Home (Hero & Cards) --- */
 .hero {
-  background-color: #0038c72a; /* Dùng lại màu cũ của bạn nhưng đẹp hơn */
-  background-image: linear-gradient(
-    135deg,
-    #0056b3 0%,
-    #007bff 100%
-  ); /* Thêm dải màu gradient "xịn" */
+  background-image: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
   color: white;
   text-align: center;
   padding: 80px 32px;
@@ -155,7 +134,7 @@ footer p {
 .hero p {
   font-size: 1.25em;
   margin-bottom: 32px;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .cta-button {
@@ -173,15 +152,13 @@ footer p {
 .cta-button:hover {
   background-color: #f4f4f7;
   color: #0056b3;
-  transform: translateY(-2px); /* Hiệu ứng nhấc lên */
+  transform: translateY(-2px);
 }
 
-/* Lưới thẻ (Card Grid) */
 .card-grid {
   display: grid;
-  /* Hiển thị 3 cột trên PC, 2 cột trên tablet, 1 cột trên mobile */
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px; /* Khoảng cách giữa các thẻ */
+  gap: 24px;
   margin-top: 24px;
 }
 
@@ -189,9 +166,9 @@ footer p {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  overflow: hidden; /* Đảm bảo ảnh bo góc theo thẻ */
+  overflow: hidden;
   display: flex;
-  flex-direction: column; /* Sắp xếp nội dung theo cột */
+  flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -202,13 +179,13 @@ footer p {
 
 .card img {
   width: 100%;
-  height: 200px; /* Cố định chiều cao ảnh */
-  object-fit: cover; /* Đảm bảo ảnh lấp đầy, không bị méo */
+  height: 200px;
+  object-fit: cover;
 }
 
 .card-content {
   padding: 20px;
-  flex-grow: 1; /* Giúp phần nội dung lấp đầy */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
@@ -220,23 +197,21 @@ footer p {
 
 .card-content p {
   font-size: 0.95em;
-  flex-grow: 1; /* Đẩy link xuống cuối */
+  flex-grow: 1;
 }
 
 .card-link {
   color: #007bff;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 16px; /* Khoảng cách với text */
+  margin-top: 16px;
 }
 
 .card-link:hover {
   text-decoration: underline;
 }
 
-/* --- CSS MỚI CHO TRANG ABOUT (CV) --- */
-
-/* Bỏ style .container cũ trên trang CV */
+/* --- Trang About (CV) --- */
 .cv-container {
   max-width: 1100px;
   margin: 24px auto;
@@ -245,23 +220,22 @@ footer p {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  overflow: hidden; /* Giúp sidebar và main content đẹp hơn */
+  overflow: hidden;
 }
 
-/* Cột bên trái */
 .cv-sidebar {
-  flex: 0 0 300px; /* Cố định chiều rộng 300px */
-  background-color: #f8f9fa; /* Màu nền xám nhạt */
+  flex: 0 0 300px;
+  background-color: #f8f9fa;
   padding: 32px;
   border-right: 1px solid #e9ecef;
 }
 
 .profile-pic {
-  width: 100%; /* Tự động vừa vặn 100% sidebar */
-  max-width: 200px; /* Giới hạn kích thước tối đa */
+  width: 100%;
+  max-width: 200px;
   display: block;
   margin: 0 auto 24px auto;
-  border-radius: 50%; /* Bo tròn thành hình tròn */
+  border-radius: 50%;
   border: 5px solid #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -293,9 +267,8 @@ footer p {
   line-height: 1.6;
 }
 
-/* Cột bên phải */
 .cv-main {
-  flex-grow: 1; /* Lấp đầy phần còn lại */
+  flex-grow: 1;
   padding: 32px;
 }
 
@@ -349,120 +322,18 @@ footer p {
 
 .cv-item ul {
   margin: 0;
-  padding-left: 20px; /* Thụt vào cho đẹp */
+  padding-left: 20px;
 }
 
-/* --- CSS ĐIỀU CHỈNH CHO ĐIỆN THOẠI (Responsive) --- */
-@media (max-width: 900px) {
-  /* Cho trang CV */
-  .cv-container {
-    flex-direction: column; /* Xếp 2 cột chồng lên nhau */
-  }
-  .cv-sidebar {
-    flex-basis: auto; /* Bỏ cố định chiều rộng */
-    border-right: none;
-    border-bottom: 1px solid #e9ecef;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Cho trang Home */
-  .hero h1 {
-    font-size: 2.2em;
-  }
-  .hero p {
-    font-size: 1.1em;
-  }
-  .hero {
-    padding: 60px 24px;
-  }
-
-  /* Cho Header */
-  header {
-    flex-direction: column; /* Xếp logo và menu chồng lên nhau */
-    padding: 16px;
-    gap: 16px;
-  }
-  .menu li a {
-    padding: 8px 12px;
-  }
-}
-/* --- CSS ĐIỀU CHỈNH CHO ĐIỆN THOẠI (Responsive) --- */
-@media (max-width: 900px) {
-  /* Cho trang CV (Giữ nguyên) */
-  .cv-container {
-    flex-direction: column; /* Xếp 2 cột chồng lên nhau */
-  }
-  .cv-sidebar {
-    flex-basis: auto; /* Bỏ cố định chiều rộng */
-    border-right: none;
-    border-bottom: 1px solid #e9ecef;
-  }
-}
-
-/* KHỐI NÂNG CẤP CHO ĐIỆN THOẠI 
-   (Thay thế hoàn toàn khối 768px cũ bằng khối này) 
-*/
-@media (max-width: 768px) {
-  /* Cho trang Home */
-  .hero h1 {
-    font-size: 2.2em;
-  }
-  .hero p {
-    font-size: 1.1em;
-  }
-  .hero {
-    padding: 60px 24px;
-  }
-
-  /* Cho Header */
-  header {
-    
-    flex-direction: row; /* Xếp logo và menu chồng lên nhau */
-    padding: 16px;
-    gap: 16px;
-  }
-  
-  /* --- FIX MENU BỊ VỠ --- */
-  .menu ul {
-    flex-direction: row; /* Xếp các mục menu dọc xuống */
-    width: 100%;
-    gap: 8px; /* Khoảng cách giữa các mục menu */
-  }
-  .menu li {
-    width: 100%;
-  }
-  .menu li a {
-    padding: 12px 16px; /* Tăng padding cho dễ bấm */
-    text-align: center; /* Căn giữa chữ trong menu */
-  }
-  /* --- HẾT FIX MENU --- */
-
-
-  /* --- FIX NỘI DUNG DÍNH CẠNH --- */
-  .container {
-    /* Bỏ lề 'auto', đổi thành lề 16px 
-       (trên/dưới 24px, trái/phải 16px) */
-    margin: 24px 16px; 
-  }
-  .cv-container {
-    /* Bỏ lề 'auto', đổi thành lề 16px cho CV */
-    margin: 16px;
-  }
-  /* --- HẾT FIX NỘI DUNG --- */
-}
-/* --- CSS MỚI CHO FOOTER NÂNG CẤP --- */
-
-/* Ghi đè style footer cũ */
+/* --- Footer Nâng Cấp --- */
 footer {
-  background-color: #343a40; /* Giữ màu nền tối */
-  color: #adb5bd; /* Màu chữ xám nhạt */
-  padding: 48px 0 0 0; /* Tăng padding trên, bỏ padding dưới */
+  background-color: #343a40;
+  color: #adb5bd;
+  padding: 48px 0 0 0;
   margin-top: 32px;
-  text-align: left; /* Bỏ text-align: center cũ */
+  text-align: left;
 }
 
-/* Reset margin của thẻ p trong footer */
 footer p {
   margin: 0 0 16px 0;
   line-height: 1.6;
@@ -470,17 +341,17 @@ footer p {
 
 .footer-container {
   max-width: 1100px;
-  margin: 0 auto; /* Căn giữa */
+  margin: 0 auto;
   padding: 0 24px;
   display: flex;
-  flex-wrap: wrap; /* Cho phép xuống hàng trên mobile */
-  justify-content: space-between; /* Phân bố 3 cột */
-  gap: 32px; /* Khoảng cách giữa các cột */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
 }
 
 .footer-col {
-  flex: 1; /* Các cột tự co giãn */
-  min-width: 250px; /* Chiều rộng tối thiểu trước khi xuống hàng */
+  flex: 1;
+  min-width: 250px;
 }
 
 .footer-col h3 {
@@ -488,20 +359,17 @@ footer p {
   color: #ffffff;
   margin-top: 0;
   margin-bottom: 20px;
-  /* Giống style của CV cho đồng bộ */
-  border-bottom: 2px solid #007bff; 
+  border-bottom: 2px solid #007bff;
   padding-bottom: 8px;
-  display: inline-block; /* Giúp border-bottom vừa vặn với chữ */
+  display: inline-block;
 }
 
-/* Style cho các link và list trong footer */
 .footer-col ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* Cột Contact & Quick Links */
 .contact-info li,
 .quick-links li {
   margin-bottom: 12px;
@@ -509,25 +377,24 @@ footer p {
 
 .contact-info a,
 .quick-links a {
-  color: #adb5bd; /* Màu link xám nhạt */
+  color: #adb5bd;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .contact-info a:hover,
 .quick-links a:hover {
-  color: #ffffff; /* Sáng lên khi hover */
+  color: #ffffff;
   text-decoration: underline;
 }
 
 .contact-info i {
-  width: 20px; /* Căn icon cho thẳng hàng */
+  width: 20px;
   margin-right: 8px;
-  color: #007bff; /* Màu xanh cho icon */
+  color: #007bff;
   text-align: center;
 }
 
-/* Cột Social Media */
 .social-links {
   display: flex;
   gap: 12px;
@@ -537,31 +404,229 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 44px; /* Kích thước nút */
+  width: 44px;
   height: 44px;
-  background-color: #495057; /* Nền nút */
-  color: #ffffff; /* Màu icon */
+  background-color: #495057;
+  color: #ffffff;
   text-decoration: none;
-  border-radius: 50%; /* Bo tròn */
+  border-radius: 50%;
   font-size: 1.2em;
   transition: background-color 0.3s, transform 0.3s;
 }
 
 .social-links a:hover {
-  background-color: #007bff; /* Đổi màu xanh khi hover */
-  transform: translateY(-3px); /* Nhấc nút lên */
+  background-color: #007bff;
+  transform: translateY(-3px);
 }
 
-/* Dòng Copyright */
 .footer-bottom {
-  background-color: #212529; /* Đậm hơn 1 chút */
+  background-color: #212529;
   color: #adb5bd;
   text-align: center;
   padding: 20px;
-  margin-top: 40px; /* Khoảng cách với nội dung footer */
-  border-top: 1px solid #495057; /* Đường phân cách */
+  margin-top: 40px;
+  border-top: 1px solid #495057;
 }
 
 .footer-bottom p {
-  margin: 0; /* Reset margin cho dòng copyright */
+  margin: 0;
+}
+
+/* --- Hiệu ứng & Hamburger --- */
+
+.card,
+.skill-item,
+.cv-section {
+  opacity: 1;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.card.visible,
+.skill-item.visible,
+.cv-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hamburger-menu {
+  display: none;
+  font-size: 1.5em;
+  color: #343a40;
+  cursor: pointer;
+}
+
+/* --- Nút Back to Top --- */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+/* --- Responsive Media Queries --- */
+
+@media (max-width: 900px) {
+  /* Cho trang CV */
+  .cv-container {
+    flex-direction: column;
+  }
+  .cv-sidebar {
+    flex-basis: auto;
+    border-right: none;
+    border-bottom: 1px solid #e9ecef;
+  }
+}
+
+@media (max-width: 768px) {
+  /* --- Style chung --- */
+  .container {
+    margin: 24px 16px;
+    padding: 24px;
+  }
+  .cv-container {
+    margin: 16px;
+  }
+  .cv-main,
+  .cv-sidebar {
+    padding: 24px;
+  }
+
+  /* --- Trang Home --- */
+  .hero h1 {
+    font-size: 2.2em;
+  }
+  .hero p {
+    font-size: 1.1em;
+  }
+  .hero {
+    padding: 60px 24px;
+  }
+
+  /* --- NÂNG CẤP HEADER & MENU HAMBURGER --- */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+  }
+
+  .hamburger-menu {
+    display: block; /* Hiện nút hamburger */
+  }
+
+  .menu {
+    position: absolute;
+    top: 100%; /* Nằm ngay dưới header (vì header là 73.6px) */
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+    opacity: 1;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .menu ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 8px 0;
+    gap: 0;
+  }
+
+  .menu li a {
+    padding: 14px 24px;
+    text-align: left;
+    border-bottom: 1px solid #f4f4f7;
+  }
+
+  .menu li a:hover {
+    background-color: #f4f4f7;
+  }
+
+  .menu li a.active {
+    background-color: #007bff;
+    color: white;
+  }
+}
+/* --- NÂNG CẤP 1: GRADIENT CHUYỂN ĐỘNG --- */
+
+/* Ghi đè lên .hero cũ */
+.hero {
+  /* Tăng kích thước nền lên 400% để tạo không gian cho animation */
+  background-size: 400% 400%;
+  
+  /* background-image đã có, bây giờ thêm animation */
+  animation: animatedGradient 15s ease infinite;
+}
+
+/* Định nghĩa animation */
+@keyframes animatedGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* --- NÂNG CẤP 2: HIỆU ỨNG GÕ CHỮ --- */
+
+/* Style cho con trỏ gõ chữ */
+#hero-subtitle .cursor {
+  display: inline-block;
+  background-color: #f4f4f7; /* Màu con trỏ */
+  width: 3px;
+  margin-left: 5px;
+  animation: blink 1s infinite; /* Animation nhấp nháy */
+}
+
+/* Dùng cho JavaScript để giữ chiều cao khi chữ bị xóa */
+#hero-subtitle.typing {
+  min-height: 1.25em; 
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
 }
