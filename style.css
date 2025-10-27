@@ -384,3 +384,66 @@ footer p {
     padding: 8px 12px;
   }
 }
+/* --- CSS ĐIỀU CHỈNH CHO ĐIỆN THOẠI (Responsive) --- */
+@media (max-width: 900px) {
+  /* Cho trang CV (Giữ nguyên) */
+  .cv-container {
+    flex-direction: column; /* Xếp 2 cột chồng lên nhau */
+  }
+  .cv-sidebar {
+    flex-basis: auto; /* Bỏ cố định chiều rộng */
+    border-right: none;
+    border-bottom: 1px solid #e9ecef;
+  }
+}
+
+/* KHỐI NÂNG CẤP CHO ĐIỆN THOẠI 
+   (Thay thế hoàn toàn khối 768px cũ bằng khối này) 
+*/
+@media (max-width: 768px) {
+  /* Cho trang Home */
+  .hero h1 {
+    font-size: 2.2em;
+  }
+  .hero p {
+    font-size: 1.1em;
+  }
+  .hero {
+    padding: 60px 24px;
+  }
+
+  /* Cho Header */
+  header {
+    flex-direction: column; /* Xếp logo và menu chồng lên nhau */
+    padding: 16px;
+    gap: 16px;
+  }
+  
+  /* --- FIX MENU BỊ VỠ --- */
+  .menu ul {
+    flex-direction: column; /* Xếp các mục menu dọc xuống */
+    width: 100%;
+    gap: 8px; /* Khoảng cách giữa các mục menu */
+  }
+  .menu li {
+    width: 100%;
+  }
+  .menu li a {
+    padding: 12px 16px; /* Tăng padding cho dễ bấm */
+    text-align: center; /* Căn giữa chữ trong menu */
+  }
+  /* --- HẾT FIX MENU --- */
+
+
+  /* --- FIX NỘI DUNG DÍNH CẠNH --- */
+  .container {
+    /* Bỏ lề 'auto', đổi thành lề 16px 
+       (trên/dưới 24px, trái/phải 16px) */
+    margin: 24px 16px; 
+  }
+  .cv-container {
+    /* Bỏ lề 'auto', đổi thành lề 16px cho CV */
+    margin: 16px;
+  }
+  /* --- HẾT FIX NỘI DUNG --- */
+}
